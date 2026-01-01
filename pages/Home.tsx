@@ -213,7 +213,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
       <section ref={reflectionsRef} className="py-12 md:py-16 px-6 bg-gray-50 overflow-hidden">
         <div className="max-w-7xl mx-auto">
           <div className={`mb-10 md:mb-12 text-center transition-all duration-1000 ${reflectionsVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
-            <h3 className="text-4xl font-bold">Client Reflections</h3>
+            <h3 className="text-4xl font-bold">Client Reflections:</h3>
             <div className="w-20 h-1 bg-[#D4AF37] mx-auto mt-4 rounded-full"></div>
           </div>
           <div className="flex flex-wrap justify-center gap-8">
