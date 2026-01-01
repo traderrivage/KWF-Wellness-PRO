@@ -1,0 +1,101 @@
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KWF Wellness | Move Better. Feel Stronger.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    <style>
+      .font-inter { font-family: 'Inter', sans-serif; }
+      .font-script { font-family: 'Great Vibes', cursive; }
+      body {
+        background-color: #FAFAFA;
+        color: #1A1A1A;
+      }
+      .bg-royal-purple { background-color: #4B0082; }
+      .text-gold { color: #D4AF37; }
+      .bg-gold { background-color: #D4AF37; }
+      .border-gold { border-color: #D4AF37; }
+      
+      /* Smooth Scrolling */
+      html { scroll-behavior: smooth; }
+
+      /* Custom animations */
+      .glow-on-hover:hover {
+        box-shadow: 0 0 25px rgba(212, 175, 55, 0.4);
+        transform: translateY(-4px);
+        transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      }
+
+      /* Shape blobs for organic feel */
+      .organic-shape {
+        border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+      }
+
+      /* Entrance Animations */
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes slideInRight {
+        from {
+          opacity: 0;
+          transform: translateX(30px);
+        }
+        to {
+          opacity: 1;
+          transform: translateX(0);
+        }
+      }
+
+      .animate-fade-up {
+        animation: fadeUp 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+
+      .animate-slide-right {
+        animation: slideInRight 1s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+      }
+
+      .delay-100 { animation-delay: 100ms; }
+      .delay-200 { animation-delay: 200ms; }
+      .delay-300 { animation-delay: 300ms; }
+      .delay-400 { animation-delay: 400ms; }
+      .delay-500 { animation-delay: 500ms; }
+      .delay-700 { animation-delay: 700ms; }
+
+      /* Reveal Animation Styles (Scroll-triggered) */
+      .reveal-hidden {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+      .reveal-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+    "react/": "https://esm.sh/react@^19.2.3/",
+    "react": "https://esm.sh/react@^19.2.3"
+  }
+}
+</script>
+</head>
+  <body class="font-inter">
+    <div id="root"></div>
+  </body>
+</html>
