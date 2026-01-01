@@ -62,7 +62,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         <div className="relative z-40 max-w-7xl mx-auto px-6 lg:px-12 w-full h-full flex flex-col justify-end pb-12 md:justify-center md:pb-0">
           <div className="max-w-2xl">
             <h1 className="text-[32px] sm:text-5xl md:text-8xl font-bold text-white mb-6 leading-tight opacity-0 animate-fade-up delay-200 drop-shadow-2xl">
-              Move Better.<br />
+              <span className="text-[#D4AF37]">Move Better.</span><br />
               Feel Stronger.<br />
               <span className="text-[#D4AF37]">Live Aligned.</span>
             </h1>
