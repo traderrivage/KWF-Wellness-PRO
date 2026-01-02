@@ -37,7 +37,7 @@ export const TESTIMONIALS: Testimonial[] = [
 export const FAQS = [
   {
     question: "What should I wear to a session?",
-    answer: "For Stretch and Movement therapy, please wear comfortable athletic clothing that allows for a full range of motion. For Kingdom Massage, traditional draping is used."
+    answer: "For Stretch and Movement therapy, please wear comfortable athletic clothing that allows for a full range of motion. For Massage therapy, traditional draping is used."
   },
   {
     question: "How long does it take to see results?",
@@ -53,26 +53,26 @@ export const SERVICE_DETAILS = [
   {
     id: "01",
     title: "Stretch Therapy",
-    description: "Using PNF (Proprioceptive Neuromuscular Facilitation) and passive stretching techniques, we target the deep fascial lines that limit your movement. This isn't just 'stretching'—it's a systematic neurological reset of your muscle length.",
-    bullets: ["Increased Joint Space", "Reduced Nerve Impingement", "Enhanced Athletic Range"],
-    image: "https://images.unsplash.com/photo-1544126592-807daa2b565b?auto=format&fit=crop&q=80&w=800",
+    description: "Stretch Therapy is assisted stretching where you relax and I do the work. This allows your muscles and joints to open up more than stretching on your own. It helps release deep tension, improve flexibility, and increase range of motion safely. Great for people who sit a lot, train hard, or feel tight all the time.",
+    bullets: ["Loosen tight muscles", "Improve flexibility", "Reduce joint pressure", "Help your body feel lighter and more mobile"],
+    image: "https://lh3.googleusercontent.com/d/1AUEu6PDt3CPkh_115fwJFCuyNWZIeZry=s0",
     buttonLabel: "Book Stretch Session"
   },
   {
     id: "02",
-    title: "Kingdom Massage",
-    description: "A high-pressure, therapeutic modality designed to break down adhesions and stimulate lymphatic drainage. We focus on the 'Kingdom'—the core and spine—ensuring the center of your body is free to support your extremities.",
-    bullets: ["Deep Tissue Release", "Chronic Pain Management", "Parasympathetic Reset"],
-    image: "https://images.unsplash.com/photo-1600334129128-685c5582fd35?auto=format&fit=crop&q=80&w=800",
-    buttonLabel: "Book Kingdom Massage",
+    title: "Massage Therapy",
+    description: "Massage Therapy focuses on relieving muscle tension and calming the body. Each session is customized to your needs—whether you’re dealing with stress, soreness, or ongoing muscle pain. This is therapeutic work designed to help your body reset. Best for people who feel worn down, stressed, or sore and need real relief.",
+    bullets: ["Relieve muscle pain and soreness", "Reduce stress and tension", "Improve circulation", "Help your body recover and relax"],
+    image: "https://lh3.googleusercontent.com/d/1h6xpTl_Zqhhlb0vpwmPEQQR_TjId2pJ-=s0",
+    buttonLabel: "Book Massage Session",
     reversed: true
   },
   {
     id: "03",
     title: "Movement Therapy",
-    description: "The final stage of integration. Once the body is loose and released, we teach you how to use it. Movement therapy focuses on biomechanical efficiency, postural alignment, and functional strength.",
-    bullets: ["Postural Correction", "Biomechanical Education", "Injury Prevention"],
-    image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?auto=format&fit=crop&q=80&w=800",
+    description: "Movement Therapy helps your body move the way it was designed to move. Instead of only treating pain, we look at how you move—walking, standing, bending, and everyday motion. Small movement problems over time can lead to pain, tightness, and injury. Best for people who feel restricted, off-balance, or keep dealing with the same aches over and over.",
+    bullets: ["Reduce pain and stiffness", "Improve posture and balance", "Restore natural movement", "Prevent injuries from coming back"],
+    image: "https://lh3.googleusercontent.com/d/1pj9dAmbQkPK_1p3L1pbiFnGNw0pwGS1a=s0",
     buttonLabel: "Inquire About Movement"
   }
 ];
@@ -115,11 +115,11 @@ export const SINGLE_SESSIONS: { stretch: ServiceItem; massage: ServiceItem; comb
     ]
   },
   massage: {
-    name: "Kingdom Massage",
+    name: "Massage Therapy",
     options: [
-      { duration: "30 min", price: "$420" },
-      { duration: "60 min", price: "$560" },
-      { duration: "90 min", price: "$740" }
+      { duration: "30 min", price: "$380" },
+      { duration: "60 min", price: "$500" },
+      { duration: "90 min", price: "$680" }
     ]
   },
   combo: {

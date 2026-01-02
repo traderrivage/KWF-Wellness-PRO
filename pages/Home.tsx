@@ -31,47 +31,41 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
   return (
     <div className="pt-20">
-      {/* 1. Hero Section - Optimized Overlay for Mobile/Desktop */}
-      <section className="relative h-[90vh] flex items-center overflow-hidden bg-[#0F001F]">
-        {/* DESKTOP OVERLAY: Left-to-right deep rich gradient */}
-        <div className="absolute inset-0 z-20 bg-gradient-to-r from-[#0F001F] via-[#0F001F]/90 to-transparent hidden md:block w-3/4 pointer-events-none" />
-        
-        {/* MOBILE OVERLAY: Bottom-to-top gradient only (leaves top face area clear) */}
-        <div className="absolute inset-0 z-20 bg-gradient-to-t from-[#0F001F] via-[#0F001F]/60 to-transparent md:hidden pointer-events-none" />
-
-        {/* Hero Image Container */}
-        <div className="absolute inset-y-0 right-0 w-full md:w-1/2 lg:w-[45%] z-10 flex items-center md:items-end justify-center md:justify-end md:pr-12 lg:pr-24">
-          <div className="relative h-[70%] md:h-[80%] w-[85%] md:w-[95%] max-w-2xl group overflow-hidden md:rounded-[3rem] shadow-[0_40px_100px_rgba(0,0,0,0.8)]">
-            <img 
-              src="https://lh3.googleusercontent.com/d/1qvngA5_8jYGHc9MuHrJC3_Jii-ggTYJU=s0" 
-              alt="King Shyheim - KWF Wellness" 
-              className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
-              loading="eager"
-            />
+      {/* 1. Hero Section - Full Background Image */}
+      <section 
+        className="relative min-h-[95vh] md:min-h-[90vh] flex items-end md:items-center overflow-hidden bg-cover bg-[82%_0%] md:bg-center pb-8 pt-12 md:py-20"
+        style={{ 
+          backgroundImage: `url('https://lh3.googleusercontent.com/d/1uKOTF41TBz1AsZfJ_tP3-siTVNa5bUaN=s0')` 
+        }}
+      >
+        {/* Main Content Area */}
+        <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10 flex flex-col">
+          <div className="max-w-lg mb-2 md:mb-0">
+            {/* 
+              Responsive Hero Box:
+              - Mobile: Compressed padding, lower position, semi-transparent purple.
+              - Desktop (md+): Deeper purple semi-transparent background with blur and shadow.
+            */}
+            <div className="bg-[#4B0082]/50 backdrop-blur-sm md:bg-[#4B0082]/65 md:backdrop-blur-md border border-white/10 md:shadow-2xl p-5 sm:p-8 md:p-10 rounded-[2.5rem] md:rounded-[4rem] opacity-0 animate-fade-up text-center">
+              <h1 className="text-[26px] sm:text-4xl md:text-6xl lg:text-6xl font-bold text-white mb-3 md:mb-6 leading-[1.15] drop-shadow-md md:drop-shadow-none">
+                <span className="text-[#D4AF37]">Move Better.</span><br />
+                Feel Stronger.<br />
+                <span className="text-[#D4AF37]">Live Aligned.</span>
+              </h1>
+              <p className="text-sm sm:text-lg md:text-xl text-gray-100 mb-6 md:mb-10 font-light tracking-wide opacity-0 animate-fade-up delay-200 drop-shadow-sm md:drop-shadow-none">
+                Stretch • Massage • Movement Therapy
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 md:gap-4 opacity-0 animate-fade-up delay-400 justify-center">
+                <Button label="Book Your Session" onClick={() => onNavigate('pricing')} className="md:px-8 py-3 md:py-4" />
+                <Button label="Get Started" variant="outline" onClick={() => onNavigate('get-started')} className="md:px-8 py-3 md:py-4 border-white/40 text-white hover:border-[#D4AF37] hover:bg-[#D4AF37]/10" />
+              </div>
+            </div>
           </div>
-        </div>
 
-        {/* Floating Name Label */}
-        <div className="absolute bottom-10 right-12 lg:right-24 z-30 hidden md:block opacity-0 animate-fade-up delay-700">
-          <div className="text-[#D4AF37] font-bold text-3xl uppercase tracking-[0.4em] drop-shadow-lg">
-            King Shyheim
-          </div>
-        </div>
-
-        {/* Hero Content Overlay */}
-        <div className="relative z-40 max-w-7xl mx-auto px-6 lg:px-12 w-full h-full flex flex-col justify-end pb-12 md:justify-center md:pb-0">
-          <div className="max-w-2xl">
-            <h1 className="text-[32px] sm:text-5xl md:text-8xl font-bold text-white mb-6 leading-tight opacity-0 animate-fade-up delay-200 drop-shadow-2xl">
-              <span className="text-[#D4AF37]">Move Better.</span><br />
-              Feel Stronger.<br />
-              <span className="text-[#D4AF37]">Live Aligned.</span>
-            </h1>
-            <p className="text-base md:text-2xl text-gray-200 mb-10 font-light tracking-wide opacity-0 animate-fade-up delay-400 drop-shadow-md">
-              Stretch • Massage • Movement Therapy
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 opacity-0 animate-fade-up delay-500">
-              <Button label="Book Your Session" onClick={() => onNavigate('pricing')} className="md:px-10" />
-              <Button label="Get Started" variant="outline" onClick={() => onNavigate('get-started')} className="md:px-10 border-white/30 text-white hover:border-[#D4AF37]" />
+          {/* Floating Name Overlay */}
+          <div className="mt-4 md:mt-24 flex justify-end opacity-0 animate-fade-up delay-700">
+            <div className="text-[#D4AF37] font-bold text-base sm:text-2xl md:text-4xl uppercase tracking-[0.5em] md:tracking-[0.6em] drop-shadow-[0_4px_16px_rgba(0,0,0,1)] pointer-events-none select-none text-center w-full md:w-1/2 md:mr-0 lg:mr-10">
+              King Shyheim
             </div>
           </div>
         </div>
@@ -97,23 +91,27 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 3. Identity Section - Tighter Logo and Shadows */}
+      {/* 3. Identity Section */}
       <section className="pt-8 pb-2 md:pt-10 md:pb-4 bg-white px-6">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-8 md:gap-16 items-center">
           <div className="flex flex-col justify-center items-center h-full text-center">
-            <div className="mb-4 md:mb-6 w-full max-w-[200px] px-4"> {/* Logo size reduced further */}
+            <div className="mb-4 md:mb-6 w-full max-w-[200px] px-4">
               <img 
                 src="https://lh3.googleusercontent.com/d/1PBozSQCJ6Gim_2dAbmRIPTb68s2UcW8-" 
                 alt="KWF Logo Large" 
                 className="w-full h-auto object-contain drop-shadow-[0_10px_15px_rgba(0,0,0,0.25)] hover:drop-shadow-[0_15px_30px_rgba(212,175,55,0.4)] transition-all duration-700"
               />
             </div>
-            <h2 className="text-3xl md:text-5xl uppercase tracking-[0.2em] text-[#D4AF37] mb-4 font-bold leading-tight">
+            <h2 className="text-3xl md:text-5xl uppercase tracking-[0.2em] text-[#D4AF37] mb-8 font-bold leading-tight">
               THE REALITY
             </h2>
-            <h3 className="text-lg md:text-2xl font-normal text-gray-900 leading-tight tracking-wide max-w-lg mx-auto">
-              Most people live in a body that feels like a cage. Tension, chronic pain, and limited mobility are treated as "normal," while the underlying misalignment remains untouched.
-            </h3>
+            <div className="text-lg md:text-xl font-normal text-gray-900 leading-relaxed tracking-wide max-w-xl mx-auto space-y-6 text-center">
+              <p>Most people are not broken — they are misaligned.</p>
+              <p>They live in bodies that feel tight, heavy, and restricted, believing pain, stiffness, and limited movement are just part of getting older.</p>
+              <p>What’s often ignored is the truth:<br /><span className="font-bold text-[#4B0082]">pain is usually a signal, not a sentence.</span></p>
+              <p>When alignment, mobility, and movement are restored, the body remembers how to heal.</p>
+              <p className="font-bold text-[#D4AF37] tracking-[0.2em] pt-4">-King Copeland</p>
+            </div>
           </div>
 
           <div className="flex flex-col items-center text-center">
@@ -134,7 +132,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 4. Solution Section - Reduced Top Spacing */}
+      {/* 4. Solution Section */}
       <section className="pt-8 pb-12 md:pt-12 md:pb-16 px-6 bg-[#FAFAFA] overflow-hidden">
         <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
           <div>
@@ -144,21 +142,21 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 <div className="w-12 h-12 flex-shrink-0 bg-[#D4AF37]/10 rounded-full flex items-center justify-center text-[#D4AF37] font-bold">01</div>
                 <div>
                   <h4 className="text-xl font-bold mb-2">Stretch Therapy</h4>
-                  <p className="text-gray-600 leading-relaxed">Restore balance and improve flexibility through assisted movement that targets deep connective tissue.</p>
+                  <p className="text-gray-600 leading-relaxed">Assisted stretching where you relax and I do the work. Release deep tension, improve flexibility, and increase range of motion safely.</p>
                 </div>
               </div>
               <div className="flex gap-6">
                 <div className="w-12 h-12 flex-shrink-0 bg-[#D4AF37]/10 rounded-full flex items-center justify-center text-[#D4AF37] font-bold">02</div>
                 <div>
-                  <h4 className="text-xl font-bold mb-2">Kingdom Massage</h4>
-                  <p className="text-gray-600 leading-relaxed">Therapeutic healing for mind, body, and soul. Relieve tension while resetting your nervous system.</p>
+                  <h4 className="text-xl font-bold mb-2">Massage Therapy</h4>
+                  <p className="text-gray-600 leading-relaxed">Focuses on relieving muscle tension and calming the body. Customized therapeutic work to help your body reset and recover.</p>
                 </div>
               </div>
               <div className="flex gap-6">
                 <div className="w-12 h-12 flex-shrink-0 bg-[#D4AF37]/10 rounded-full flex items-center justify-center text-[#D4AF37] font-bold">03</div>
                 <div>
                   <h4 className="text-xl font-bold mb-2">Movement Therapy</h4>
-                  <p className="text-gray-600 leading-relaxed">Re-learning how to move with power and grace, ensuring your results last a lifetime.</p>
+                  <p className="text-gray-600 leading-relaxed">Movement Therapy helps your body move the way it was designed to move, addressing walking, standing, and everyday motion to stop recurring pain.</p>
                 </div>
               </div>
             </div>

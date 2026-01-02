@@ -33,6 +33,36 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
     </a>
   );
 
+  const TikTokIcon = () => (
+    <a 
+      href="https://www.tiktok.com/@kingjourney444?_r=1&_t=ZT-92grOxfIdpX" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-black hover:text-gray-600 hover:scale-110 transition-transform flex items-center justify-center"
+      title="KWF Wellness TikTok"
+    >
+      <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">
+        <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+      </svg>
+    </a>
+  );
+
+  const InstagramIcon = () => (
+    <a 
+      href="https://www.instagram.com/iam_kingdom_fitness9/?igsh=MW81Z2c4d3FqMXphMw%3D%3D&utm_source=qr" 
+      target="_blank" 
+      rel="noopener noreferrer"
+      className="text-[#E4405F] hover:scale-110 transition-transform flex items-center justify-center"
+      title="KWF Wellness Instagram"
+    >
+      <svg className="w-7 h-7 fill-current" viewBox="0 0 24 24">
+        <path d="M7.75 2h8.5c3.176 0 5.75 2.574 5.75 5.75v8.5c0 3.176-2.574 5.75-5.75 5.75h-8.5C4.574 22 2 19.426 2 16.25v-8.5C2 4.574 4.574 2 7.75 2zm8.5 2h-8.5C5.681 4 4 5.681 4 7.75v8.5c0 2.069 1.681 3.75 3.75 3.75h8.5c2.069 0 3.75-1.681 3.75-3.75v-8.5C20 5.681 18.319 4 16.25 4z" />
+        <path d="M12 7c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5zm0 2c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3z" />
+        <path d="M17.335 5.51c-.46 0-.835.375-.835.835 0 .46.375.835.835.835.46 0 .835-.375.835-.835 0-.46-.375-.835-.835-.835z" />
+      </svg>
+    </a>
+  );
+
   const PhoneLink = () => (
     <a 
       href="tel:17272700273" 
@@ -48,10 +78,10 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
 
   return (
     <nav className="fixed w-full z-50 bg-white/95 backdrop-blur-md border-b border-gray-100 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-5 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-12 py-5 flex justify-between items-center gap-x-4 lg:gap-x-8">
         <button 
           onClick={(e) => handleNav(e, '#/')} 
-          className="flex items-center space-x-2 sm:space-x-3 group focus:outline-none"
+          className="flex items-center space-x-2 sm:space-x-3 group focus:outline-none flex-shrink-0"
         >
           <img 
             src="https://lh3.googleusercontent.com/d/1PBozSQCJ6Gim_2dAbmRIPTb68s2UcW8-" 
@@ -60,17 +90,17 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
           />
           <div className="flex flex-col md:flex-row md:items-center md:space-x-2 text-left">
             <span className="text-xl sm:text-2xl font-bold tracking-tighter uppercase text-[#4B0082] group-hover:text-[#D4AF37] transition-colors leading-none">KWF</span>
-            <span className="text-base sm:text-xl font-light tracking-[0.2em] uppercase text-gray-500 group-hover:text-gray-800 transition-colors leading-none">Wellness</span>
+            <span className="text-base sm:text-xl font-light tracking-[0.15em] uppercase text-gray-500 group-hover:text-gray-800 transition-colors leading-none">Wellness</span>
           </div>
         </button>
 
         {/* Desktop Menu */}
-        <div className="hidden md:flex space-x-6 lg:space-x-8 items-center">
+        <div className="hidden md:flex space-x-6 lg:space-x-8 items-center flex-shrink-0">
           {NAV_ITEMS.map((item) => (
             <button 
               key={item.label} 
               onClick={(e) => handleNav(e, item.href)}
-              className={`text-sm font-medium tracking-wide uppercase transition-colors hover:text-[#D4AF37] focus:outline-none ${
+              className={`text-sm font-medium tracking-wide uppercase transition-colors hover:text-[#D4AF37] focus:outline-none whitespace-nowrap ${
                 (item.href === '#/' && currentView === 'home') || (item.href.includes(currentView)) 
                 ? 'text-[#D4AF37]' 
                 : 'text-gray-600'
@@ -81,18 +111,23 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
           ))}
           <button 
             onClick={(e) => handleNav(e, '#/pricing')}
-            className="px-6 py-2 bg-[#D4AF37] text-white rounded-full text-sm font-bold glow-on-hover transition-all focus:outline-none"
+            className="px-6 py-2 bg-[#D4AF37] text-white rounded-full text-sm font-bold glow-on-hover transition-all focus:outline-none whitespace-nowrap"
           >
             Book Now
           </button>
           <div className="h-6 w-px bg-gray-200 mx-2" />
           <PhoneLink />
-          <YouTubeIcon />
+          <div className="flex items-center space-x-4">
+            <InstagramIcon />
+            <TikTokIcon />
+            <YouTubeIcon />
+          </div>
         </div>
 
         {/* Mobile Toggle + Icons on Mobile Bar */}
         <div className="flex items-center space-x-3 sm:space-x-4 md:hidden">
-          <PhoneLink />
+          <InstagramIcon />
+          <TikTokIcon />
           <YouTubeIcon />
           <button className="text-2xl text-[#4B0082] focus:outline-none" onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? '✕' : '☰'}
