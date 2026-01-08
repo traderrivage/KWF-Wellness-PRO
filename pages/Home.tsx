@@ -12,6 +12,10 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   const [reflectionsVisible, setReflectionsVisible] = useState(false);
   const reflectionsRef = useRef<HTMLElement>(null);
 
+  const handleBooking = () => {
+    window.open('https://near.place/booking/?id=PWtUTQ', '_blank');
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -41,11 +45,6 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
         {/* Main Content Area */}
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10 flex flex-col">
           <div className="max-w-lg mb-2 md:mb-0">
-            {/* 
-              Responsive Hero Box:
-              - Mobile: Compressed padding, lower position, semi-transparent purple.
-              - Desktop (md+): Deeper purple semi-transparent background with blur and shadow.
-            */}
             <div className="bg-[#4B0082]/50 backdrop-blur-sm md:bg-[#4B0082]/65 md:backdrop-blur-md border border-white/10 md:shadow-2xl p-5 sm:p-8 md:p-10 rounded-[2.5rem] md:rounded-[4rem] opacity-0 animate-fade-up text-center">
               <h1 className="text-[26px] sm:text-4xl md:text-6xl lg:text-6xl font-bold text-white mb-3 md:mb-6 leading-[1.15] drop-shadow-md md:drop-shadow-none">
                 <span className="text-[#D4AF37]">Move Better.</span><br />
@@ -56,7 +55,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
                 Stretch • Massage • Movement Therapy
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 opacity-0 animate-fade-up delay-400 justify-center">
-                <Button label="Book Your Session" onClick={() => onNavigate('pricing')} className="md:px-8 py-3 md:py-4" />
+                <Button label="Book Your Session" onClick={handleBooking} className="md:px-8 py-3 md:py-4" />
                 <Button label="Get Started" variant="outline" onClick={() => onNavigate('get-started')} className="md:px-8 py-3 md:py-4 border-white/40 text-white hover:border-[#D4AF37] hover:bg-[#D4AF37]/10" />
               </div>
             </div>
@@ -181,27 +180,41 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
             <p className="text-[#D4AF37] font-script text-2xl">Witness the Transformation</p>
           </div>
           
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="aspect-[9/16] bg-gray-100 rounded-[2rem] overflow-hidden shadow-2xl border border-gray-50">
-              <iframe 
-                src="https://drive.google.com/file/d/1xq4D-PunYtF9grFpwUZGUPfdBsFfJlCf/preview" 
-                className="w-full h-full border-none"
-                allow="autoplay"
-              ></iframe>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 items-start">
+            {/* First Video */}
+            <div className="flex justify-center">
+              <div className="w-full max-w-[400px] aspect-[9/16] bg-gray-100 rounded-[2rem] overflow-hidden shadow-2xl border border-gray-50">
+                <iframe 
+                  src="https://www.youtube.com/embed/g4uSt1c7l5I" 
+                  className="w-full h-full border-none"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
-            <div className="aspect-[9/16] bg-gray-100 rounded-[2rem] overflow-hidden shadow-2xl border border-gray-50">
-              <iframe 
-                src="https://drive.google.com/file/d/14FN5-bliXXnHlfq4KZrvxuULVLxB9ww-/preview" 
-                className="w-full h-full border-none"
-                allow="autoplay"
-              ></iframe>
+            
+            {/* Center Video */}
+            <div className="flex justify-center">
+              <div className="w-full max-w-[400px] aspect-[9/16] bg-gray-100 rounded-[2rem] overflow-hidden shadow-2xl border border-gray-50">
+                <iframe 
+                  src="https://www.youtube.com/embed/vnimz24ceFc" 
+                  className="w-full h-full border-none"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
-            <div className="aspect-[9/16] bg-gray-100 rounded-[2rem] overflow-hidden shadow-2xl border border-gray-50">
-              <iframe 
-                src="https://drive.google.com/file/d/1gnSAhDpNG317ggMkB_Jzpnzw6FxdsoVZ/preview" 
-                className="w-full h-full border-none"
-                allow="autoplay"
-              ></iframe>
+            
+            {/* Third Video */}
+            <div className="flex justify-center">
+              <div className="w-full max-w-[400px] aspect-[9/16] bg-gray-100 rounded-[2rem] overflow-hidden shadow-2xl border border-gray-50">
+                <iframe 
+                  src="https://www.youtube.com/embed/SEAGf2d4hpw" 
+                  className="w-full h-full border-none"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  allowFullScreen
+                ></iframe>
+              </div>
             </div>
           </div>
         </div>

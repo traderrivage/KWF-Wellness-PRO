@@ -10,7 +10,7 @@ interface ButtonProps {
 }
 
 const Button: React.FC<ButtonProps> = ({ label, variant = 'primary', onClick, className = '', type = 'button' }) => {
-  const baseStyles = "px-8 py-4 rounded-full font-bold uppercase tracking-wider text-sm transition-all duration-300 glow-on-hover";
+  const baseStyles = "px-8 py-4 rounded-full font-bold uppercase tracking-wider text-sm transition-all duration-300 glow-on-hover flex items-center justify-center text-center";
   
   const variants = {
     primary: "bg-[#D4AF37] text-white hover:bg-[#C5A028]",

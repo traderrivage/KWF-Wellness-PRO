@@ -9,6 +9,10 @@ interface PricingProps {
 }
 
 const Pricing: React.FC<PricingProps> = ({ onNavigate }) => {
+  const handleBooking = () => {
+    window.open('https://near.place/booking/?id=PWtUTQ', '_blank');
+  };
+
   return (
     <div className="pt-32 pb-24 px-6 bg-white">
       <div className="max-w-7xl mx-auto">
@@ -39,7 +43,9 @@ const Pricing: React.FC<PricingProps> = ({ onNavigate }) => {
                     <p className={`text-sm ${plan.highlight ? 'text-purple-200' : 'text-gray-500'}`}>{plan.frequency}</p>
                   </div>
                   {plan.highlight && (
-                    <span className="bg-[#D4AF37] text-white text-[10px] px-3 py-1 rounded-full uppercase font-bold tracking-widest">Most Popular</span>
+                    <span className="bg-[#D4AF37] text-white text-[10px] px-3 py-1 rounded-full uppercase font-bold tracking-widest flex items-center justify-center text-center min-w-[100px]">
+                      Most Popular
+                    </span>
                   )}
                 </div>
                 
@@ -60,12 +66,14 @@ const Pricing: React.FC<PricingProps> = ({ onNavigate }) => {
                 </div>
               </div>
 
-              <Button 
-                label="Join Membership" 
-                variant={plan.highlight ? 'primary' : 'secondary'} 
-                className="w-full"
-                onClick={() => onNavigate('get-started')}
-              />
+              <div className="flex justify-center w-full">
+                <Button 
+                  label="Join Membership" 
+                  variant={plan.highlight ? 'primary' : 'secondary'} 
+                  className="w-full text-center flex items-center justify-center"
+                  onClick={handleBooking}
+                />
+              </div>
             </div>
           ))}
         </div>
@@ -99,7 +107,7 @@ const Pricing: React.FC<PricingProps> = ({ onNavigate }) => {
                   </div>
                 ))}
               </div>
-              <Button label="Book Now" variant="outline" className="w-full mt-10" onClick={() => onNavigate('get-started')} />
+              <Button label="Book Now" variant="outline" className="w-full mt-10 text-center flex justify-center items-center" onClick={handleBooking} />
             </div>
 
             {/* Kingdom Massage */}
@@ -114,7 +122,7 @@ const Pricing: React.FC<PricingProps> = ({ onNavigate }) => {
                   </div>
                 ))}
               </div>
-              <Button label="Book Now" variant="outline" className="w-full mt-10" onClick={() => onNavigate('get-started')} />
+              <Button label="Book Now" variant="outline" className="w-full mt-10 text-center flex justify-center items-center" onClick={handleBooking} />
             </div>
           </div>
 
@@ -134,7 +142,7 @@ const Pricing: React.FC<PricingProps> = ({ onNavigate }) => {
                   <p className="text-[10px] uppercase tracking-[0.2em] text-purple-300 mb-2">Investment</p>
                   <p className="text-3xl font-bold">$1,060</p>
                 </div>
-                <Button label="Book Combo" onClick={() => onNavigate('get-started')} />
+                <Button label="Book Combo" onClick={handleBooking} className="text-center flex justify-center items-center" />
               </div>
             </div>
           </div>

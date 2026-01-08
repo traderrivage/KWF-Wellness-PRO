@@ -48,7 +48,7 @@ const GetStarted: React.FC<GetStartedProps> = ({ onNavigate }) => {
               <input 
                 required
                 type="text" 
-                placeholder="King Shyheim"
+                placeholder="Your Name"
                 className="p-5 bg-gray-50 rounded-2xl border border-transparent focus:border-[#D4AF37] focus:bg-white outline-none transition-all font-medium"
               />
             </div>

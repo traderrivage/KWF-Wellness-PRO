@@ -19,6 +19,11 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
     setIsOpen(false);
   };
 
+  const handleBooking = () => {
+    window.open('https://near.place/booking/?id=PWtUTQ', '_blank');
+    setIsOpen(false);
+  };
+
   const YouTubeIcon = () => (
     <a 
       href="https://www.youtube.com/@KingCopeland96/videos" 
@@ -110,7 +115,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
             </button>
           ))}
           <button 
-            onClick={(e) => handleNav(e, '#/pricing')}
+            onClick={handleBooking}
             className="px-6 py-2 bg-[#D4AF37] text-white rounded-full text-sm font-bold glow-on-hover transition-all focus:outline-none whitespace-nowrap"
           >
             Book Now
@@ -148,7 +153,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
             </button>
           ))}
           <button 
-            onClick={(e) => handleNav(e, '#/pricing')}
+            onClick={handleBooking}
             className="bg-[#D4AF37] text-white py-4 rounded-xl text-center font-bold shadow-lg"
           >
             Book Now

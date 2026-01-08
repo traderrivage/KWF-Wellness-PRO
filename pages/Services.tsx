@@ -9,6 +9,10 @@ interface ServicesProps {
 }
 
 const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
+  const handleBooking = () => {
+    window.open('https://near.place/booking/?id=PWtUTQ', '_blank');
+  };
+
   return (
     <div className="pt-32 pb-24 px-6">
       <div className="max-w-7xl mx-auto">
@@ -41,7 +45,7 @@ const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
                     </li>
                   ))}
                 </ul>
-                <Button label={service.buttonLabel} variant="primary" onClick={() => onNavigate('get-started')} />
+                <Button label={service.buttonLabel} variant="primary" onClick={handleBooking} />
               </div>
             </div>
           ))}

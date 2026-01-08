@@ -73,7 +73,7 @@ export const SERVICE_DETAILS = [
     description: "Movement Therapy helps your body move the way it was designed to move. Instead of only treating pain, we look at how you move—walking, standing, bending, and everyday motion. Small movement problems over time can lead to pain, tightness, and injury. Best for people who feel restricted, off-balance, or keep dealing with the same aches over and over.",
     bullets: ["Reduce pain and stiffness", "Improve posture and balance", "Restore natural movement", "Prevent injuries from coming back"],
     image: "https://lh3.googleusercontent.com/d/1pj9dAmbQkPK_1p3L1pbiFnGNw0pwGS1a=s0",
-    buttonLabel: "Inquire About Movement"
+    buttonLabel: "Book Your Movement Therapy Session"
   }
 ];
 
@@ -117,9 +117,9 @@ export const SINGLE_SESSIONS: { stretch: ServiceItem; massage: ServiceItem; comb
   massage: {
     name: "Massage Therapy",
     options: [
-      { duration: "30 min", price: "$380" },
-      { duration: "60 min", price: "$500" },
-      { duration: "90 min", price: "$680" }
+      { duration: "30 min", price: "$420" },
+      { duration: "60 min", price: "$580" },
+      { duration: "90 min", price: "$740" }
     ]
   },
   combo: {
