@@ -13,7 +13,7 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
   const reflectionsRef = useRef<HTMLElement>(null);
 
   const handleBooking = () => {
-    window.open('https://near.place/booking/?id=PWtUTQ', '_blank');
+    onNavigate('scheduling');
   };
 
   useEffect(() => {

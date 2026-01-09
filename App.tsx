@@ -9,8 +9,9 @@ import GetStarted from './pages/GetStarted.tsx';
 import Services from './pages/Services.tsx';
 import PrivacyPolicy from './pages/PrivacyPolicy.tsx';
 import TermsOfService from './pages/TermsOfService.tsx';
+import Scheduling from './pages/Scheduling.tsx';
 
-export type View = 'home' | 'services' | 'about' | 'pricing' | 'get-started' | 'privacy' | 'terms';
+export type View = 'home' | 'services' | 'about' | 'pricing' | 'get-started' | 'privacy' | 'terms' | 'scheduling';
 
 const App: React.FC = () => {
   const [currentView, setCurrentView] = useState<View>('home');
@@ -36,6 +37,8 @@ const App: React.FC = () => {
         return <PrivacyPolicy />;
       case 'terms':
         return <TermsOfService />;
+      case 'scheduling':
+        return <Scheduling />;
       default:
         return <Home onNavigate={navigateTo} />;
     }
