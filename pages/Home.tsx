@@ -35,28 +35,36 @@ const Home: React.FC<HomeProps> = ({ onNavigate }) => {
 
   return (
     <div className="pt-20">
-      {/* 1. Hero Section - Full Background Image */}
+      {/* 1. Hero Section - With Refined Dark Blue Overlay (Lighter Adjustment) */}
       <section 
         className="relative min-h-[95vh] md:min-h-[90vh] flex items-end md:items-center overflow-hidden bg-cover bg-[82%_0%] md:bg-center pb-8 pt-12 md:py-20"
         style={{ 
           backgroundImage: `url('https://lh3.googleusercontent.com/d/1uKOTF41TBz1AsZfJ_tP3-siTVNa5bUaN=s0')` 
         }}
       >
+        {/* Adjusted Blue Overlay Layers - Made 20% Lighter */}
+        {/* Gradient: Reduced opacity from 65/40/15 to 50/30/10 */}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0d143c]/50 via-[#0d143c]/30 to-[#0d143c]/10 z-0"></div>
+        {/* Tint: Reduced mix-blend opacity from 20% to 15% */}
+        <div className="absolute inset-0 bg-[#0d143c]/15 mix-blend-multiply z-0"></div>
+        {/* Base dark layer reduced from 15% to 10% */}
+        <div className="absolute inset-0 bg-black/10 z-0"></div>
+
         {/* Main Content Area */}
         <div className="max-w-7xl mx-auto px-6 lg:px-12 w-full relative z-10 flex flex-col">
           <div className="max-w-lg mb-2 md:mb-0">
-            <div className="bg-[#4B0082]/50 backdrop-blur-sm md:bg-[#4B0082]/65 md:backdrop-blur-md border border-white/10 md:shadow-2xl p-5 sm:p-8 md:p-10 rounded-[2.5rem] md:rounded-[4rem] opacity-0 animate-fade-up text-center">
-              <h1 className="text-[26px] sm:text-4xl md:text-6xl lg:text-6xl font-bold text-white mb-3 md:mb-6 leading-[1.15] drop-shadow-md md:drop-shadow-none">
+            <div className="bg-[#4B0082]/60 backdrop-blur-md md:bg-[#4B0082]/75 md:backdrop-blur-lg border border-white/20 md:shadow-2xl p-5 sm:p-8 md:p-10 rounded-[2.5rem] md:rounded-[4rem] opacity-0 animate-fade-up text-center">
+              <h1 className="text-[26px] sm:text-4xl md:text-6xl lg:text-6xl font-bold text-white mb-3 md:mb-6 leading-[1.15] drop-shadow-lg">
                 <span className="text-[#D4AF37]">Move Better.</span><br />
                 Feel Stronger.<br />
                 <span className="text-[#D4AF37]">Live Aligned.</span>
               </h1>
-              <p className="text-sm sm:text-lg md:text-xl text-gray-100 mb-6 md:mb-10 font-light tracking-wide opacity-0 animate-fade-up delay-200 drop-shadow-sm md:drop-shadow-none">
+              <p className="text-sm sm:text-lg md:text-xl text-gray-100 mb-6 md:mb-10 font-light tracking-wide opacity-0 animate-fade-up delay-200 drop-shadow-md">
                 Stretch • Massage • Movement Therapy
               </p>
               <div className="flex flex-col sm:flex-row gap-3 md:gap-4 opacity-0 animate-fade-up delay-400 justify-center">
-                <Button label="Book Your Session" onClick={handleBooking} className="md:px-8 py-3 md:py-4" />
-                <Button label="Get Started" variant="outline" onClick={() => onNavigate('get-started')} className="md:px-8 py-3 md:py-4 border-white/40 text-white hover:border-[#D4AF37] hover:bg-[#D4AF37]/10" />
+                <Button label="Book Your Session" onClick={handleBooking} className="md:px-8 py-3 md:py-4 shadow-xl" />
+                <Button label="Get Started" variant="outline" onClick={() => onNavigate('get-started')} className="md:px-8 py-3 md:py-4 border-white/60 text-white hover:border-[#D4AF37] hover:bg-[#D4AF37]/20 backdrop-blur-sm" />
               </div>
             </div>
           </div>

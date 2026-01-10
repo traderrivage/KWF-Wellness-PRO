@@ -75,7 +75,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div>
             <h4 className="text-[#D4AF37] uppercase tracking-widest text-sm font-bold mb-6">Contact</h4>
             <ul className="space-y-4 text-gray-400">
-              <li>Bookings: kingshyheim@kwfwellness.com</li>
+              <li>Bookings: kwfwellnessstudio@gmail.com</li>
               <li>Studio: Luxury Concierge & Private Sessions</li>
               <li className="flex space-x-4 mt-6">
                 <InstagramIcon />
@@ -90,6 +90,7 @@ const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
           <div className="mt-4 md:mt-0 flex flex-wrap justify-center md:justify-end gap-x-8 gap-y-4">
             <button onClick={(e) => handleNav(e, 'privacy')} className="hover:text-white cursor-pointer focus:outline-none">Privacy Policy</button>
             <button onClick={(e) => handleNav(e, 'terms')} className="hover:text-white cursor-pointer focus:outline-none">Terms of Service</button>
+            <button onClick={(e) => handleNav(e, 'scheduling')} className="hover:text-white cursor-pointer focus:outline-none">Admin</button>
             <a 
               href="https://nextlevellocalbusiness.com" 
               target="_blank" 
