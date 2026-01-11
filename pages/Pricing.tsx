@@ -10,7 +10,7 @@ interface PricingProps {
 
 const Pricing: React.FC<PricingProps> = ({ onNavigate }) => {
   const handleBooking = () => {
-    onNavigate('scheduling');
+    window.open('https://near.place/booking/?id=PWtUTQ', '_blank');
   };
 
   return (

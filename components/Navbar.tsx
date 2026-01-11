@@ -19,7 +19,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
   };
 
   const handleBooking = () => {
-    onNavigate('scheduling');
+    window.open('https://near.place/booking/?id=PWtUTQ', '_blank');
     setIsOpen(false);
   };
 
@@ -62,7 +62,7 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
       <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
         <path d="M7.75 2h8.5c3.176 0 5.75 2.574 5.75 5.75v8.5c0 3.176-2.574 5.75-5.75 5.75h-8.5C4.574 22 2 19.426 2 16.25v-8.5C2 4.574 4.574 2 7.75 2zm8.5 2h-8.5C5.681 4 4 5.681 4 7.75v8.5c0 2.069 1.681 3.75 3.75 3.75h8.5c2.069 0 3.75-1.681 3.75-3.75v-8.5C20 5.681 18.319 4 16.25 4z" />
         <path d="M12 7c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5zm0 2c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3z" />
-        <path d="M17.335 5.51c-.46 0-.835.375-.835.835 0 .46.375.835.835.835.46 0 .835-.375.835-.835 0-.46-.375-.835-.835-.835z" />
+        <path d="M17.335 5.51c-.46 0-.835.375-.835.835 0 .46.375.835.835.835.46 0 .835-.375.835-.835.835.46 0 .835-.375.835-.835-.835z" />
       </svg>
     </a>
   );

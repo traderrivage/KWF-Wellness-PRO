@@ -10,7 +10,7 @@ interface ServicesProps {
 
 const Services: React.FC<ServicesProps> = ({ onNavigate }) => {
   const handleBooking = () => {
-    onNavigate('scheduling');
+    window.open('https://near.place/booking/?id=PWtUTQ', '_blank');
   };
 
   return (
