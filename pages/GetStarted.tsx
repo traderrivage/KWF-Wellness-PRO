@@ -16,12 +16,15 @@ const GetStarted: React.FC<GetStartedProps> = ({ onNavigate }) => {
     const form = e.currentTarget;
     const formData = new FormData(form);
 
+    // --- ADD THIS LINE ---
+  formData.append("form-name", "intake-form");
+
     try {
       await fetch("/", {
         method: "POST",
         headers: { "Content-Type": "application/x-www-form-urlencoded" },
-        body: new URLSearchParams(formData as any).toString(),
-      });
+        body: new URLSearchParams(formData as any).toString(), 
+    });
       setSubmitted(true);
     } catch (error) {
       console.error("Form submission error:", error);
