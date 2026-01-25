@@ -10,9 +10,23 @@ interface GetStartedProps {
 const GetStarted: React.FC<GetStartedProps> = ({ onNavigate }) => {
   const [submitted, setSubmitted] = useState(false);
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setSubmitted(true);
+    
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+
+    try {
+      await fetch("/", {
+        method: "POST",
+        headers: { "Content-Type": "application/x-www-form-urlencoded" },
+        body: new URLSearchParams(formData as any).toString(),
+      });
+      setSubmitted(true);
+    } catch (error) {
+      console.error("Form submission error:", error);
+      alert("There was an issue submitting your application. Please try again.");
+    }
   };
 
   if (submitted) {
@@ -41,13 +55,22 @@ const GetStarted: React.FC<GetStartedProps> = ({ onNavigate }) => {
           This work is highly personalized. Please share a bit about what you’re experiencing and what you want your body to do better.
         </p>
 
-        <form onSubmit={handleSubmit} className="space-y-10 bg-white p-8 md:p-16 rounded-[3rem] shadow-2xl shadow-purple-900/5 border border-gray-100">
+        <form 
+          name="intake-form" 
+          method="POST" 
+          data-netlify="true" 
+          onSubmit={handleSubmit} 
+          className="space-y-10 bg-white p-8 md:p-16 rounded-[3rem] shadow-2xl shadow-purple-900/5 border border-gray-100"
+        >
+          <input type="hidden" name="form-name" value="intake-form" />
+          
           <div className="grid md:grid-cols-2 gap-10">
             <div className="flex flex-col gap-3">
               <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Full Name</label>
               <input 
                 required
                 type="text" 
+                name="name"
                 placeholder="Your Name"
                 className="p-5 bg-gray-50 rounded-2xl border border-transparent focus:border-[#D4AF37] focus:bg-white outline-none transition-all font-medium"
               />
@@ -57,6 +80,7 @@ const GetStarted: React.FC<GetStartedProps> = ({ onNavigate }) => {
               <input 
                 required
                 type="email" 
+                name="email"
                 placeholder="you@luxury.com"
                 className="p-5 bg-gray-50 rounded-2xl border border-transparent focus:border-[#D4AF37] focus:bg-white outline-none transition-all font-medium"
               />
@@ -67,6 +91,7 @@ const GetStarted: React.FC<GetStartedProps> = ({ onNavigate }) => {
             <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Areas of pain, tension, or limitation?</label>
             <textarea 
               required
+              name="pain_points"
               rows={4}
               placeholder="Tell me where you feel restricted in your movement..."
               className="p-5 bg-gray-50 rounded-2xl border border-transparent focus:border-[#D4AF37] focus:bg-white outline-none transition-all resize-none font-medium"
@@ -77,6 +102,7 @@ const GetStarted: React.FC<GetStartedProps> = ({ onNavigate }) => {
             <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Goals for your body and movement?</label>
             <textarea 
               required
+              name="goals"
               rows={3}
               placeholder="What do you want to be able to do comfortably again?"
               className="p-5 bg-gray-50 rounded-2xl border border-transparent focus:border-[#D4AF37] focus:bg-white outline-none transition-all resize-none font-medium"
@@ -87,6 +113,7 @@ const GetStarted: React.FC<GetStartedProps> = ({ onNavigate }) => {
             <label className="text-xs font-bold uppercase tracking-widest text-gray-400">Ideal State</label>
             <textarea 
               required
+              name="ideal_state"
               rows={3}
               placeholder="If you could live pain-free, what would your daily life look like?"
               className="p-5 bg-gray-50 rounded-2xl border border-transparent focus:border-[#D4AF37] focus:bg-white outline-none transition-all resize-none font-medium"
