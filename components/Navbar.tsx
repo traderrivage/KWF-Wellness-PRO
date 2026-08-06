@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { NAV_ITEMS } from '../constants.tsx';
 import { View } from '../App.tsx';
@@ -62,21 +61,21 @@ const Navbar: React.FC<NavbarProps> = ({ onNavigate, currentView }) => {
       <svg className="w-6 h-6 fill-current" viewBox="0 0 24 24">
         <path d="M7.75 2h8.5c3.176 0 5.75 2.574 5.75 5.75v8.5c0 3.176-2.574 5.75-5.75 5.75h-8.5C4.574 22 2 19.426 2 16.25v-8.5C2 4.574 4.574 2 7.75 2zm8.5 2h-8.5C5.681 4 4 5.681 4 7.75v8.5c0 2.069 1.681 3.75 3.75 3.75h8.5c2.069 0 3.75-1.681 3.75-3.75v-8.5C20 5.681 18.319 4 16.25 4z" />
         <path d="M12 7c-2.761 0-5 2.239-5 5s2.239 5 5 5 5-2.239 5-5-2.239-5-5-5zm0 2c1.657 0 3 1.343 3 3s-1.343 3-3 3-3-1.343-3-3 1.343-3 3-3z" />
-        <path d="M17.335 5.51c-.46 0-.835.375-.835.835 0 .46.375.835.835.835.46 0 .835-.375.835-.835.835.46 0 .835-.375.835-.835-.835z" />
+        <path d="M17.335 5.51c-.46 0-.835.375-.835.835 0 .46.375.835.835.835.46 0 .835-.375.835-.835 0-.46-.375-.835-.835-.835z" />
       </svg>
     </a>
   );
 
   const PhoneLink = () => (
     <a 
-      href="tel:17272700273" 
+      href="tel:6562448060" 
       className="flex items-center text-xs lg:text-sm font-bold text-gray-700 hover:text-[#D4AF37] transition-colors gap-2"
       title="Call KWF Wellness"
     >
       <svg className="w-5 h-5 lg:w-4 lg:h-4 text-[#D4AF37]" fill="currentColor" viewBox="0 0 20 20">
         <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
       </svg>
-      <span className="hidden xl:inline whitespace-nowrap">1 727 270 0273</span>
+      <span className="hidden xl:inline whitespace-nowrap">656 244 8060</span>
     </a>
   );
 
